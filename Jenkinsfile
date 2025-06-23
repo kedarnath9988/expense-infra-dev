@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh """
                 cd 01-vpc 
-               Ls -ltr 
+               ls -ltr 
                 """
             }
         }
