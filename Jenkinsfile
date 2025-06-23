@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh """
                 cd 01-vpc 
-                terraform init -reconfigure
+               Ls -ltr 
                 """
             }
         }
@@ -22,17 +22,22 @@ pipeline {
             steps {
                  sh """
                 cd 01-vpc 
-                terraform plan  
+                echo 'this is plane;
+                ls -ltr  
             
                 """
             }
         }
         stage('apply') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+            }
             steps {
                  sh """
                 cd 01-vpc 
-                terraform iapply -auto-approve  
-            
+                echo 'this is apply '
+                ls -ltr
                 """
             }
         }
