@@ -12,7 +12,9 @@ pipeline {
         stage('init') {
             steps {
                 sh """
-                    echo 'this is init stage'
+                cd 01-vpc 
+                ls -ltr 
+            
                 """
             }
         }
