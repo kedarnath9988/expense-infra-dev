@@ -13,19 +13,27 @@ pipeline {
             steps {
                 sh """
                 cd 01-vpc 
-                ls -ltr 
+                terraform init -reconfigure 
             
                 """
             }
         }
         stage('plan') {
             steps {
-                 sh 'echo this Test stage '
+                 sh """
+                cd 01-vpc 
+                terraform plan  
+            
+                """
             }
         }
         stage('apply') {
             steps {
-                 sh 'echo this Deploy stage............... '
+                 sh """
+                cd 01-vpc 
+                terraform iapply -auto-approve  
+            
+                """
             }
         }
     }
