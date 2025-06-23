@@ -21,7 +21,7 @@ pipeline {
         stage('plan') {
             steps {
                  sh """
-                cd 01-vpc 
+                 cd 01-vpc
                 echo 'this is plane;
                 ls -ltr  
             
@@ -35,7 +35,7 @@ pipeline {
             }
             steps {
                  sh """
-                cd 01-vpc 
+                 cd 01-vpc
                 echo 'this is apply '
                 ls -ltr
                 """
